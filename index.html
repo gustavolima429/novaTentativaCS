@@ -236,7 +236,7 @@
 
             try {
                 // Envia para o Firestore (O Firebase gera o ID automaticamente via addDoc)
-                const docRef = await addDoc(collection(db, "usuarios"), {
+                const docRef = await addDoc(collection(db, "Pessoa"), {
                     nome: nome,
                     cpf: cpf,
                     dataNascimento: dataNascimento,
@@ -264,7 +264,7 @@
         const totalCount = document.getElementById('totalCount');
 
         // Query para pegar os dados ordenados por data de criação
-        const q = query(collection(db, "usuarios"), orderBy("criadoEm", "desc"));
+        const q = query(collection(db, "Pessoa"), orderBy("criadoEm", "desc"));
 
         onSnapshot(q, (snapshot) => {
             tableBody.innerHTML = '';
